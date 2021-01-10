@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://appmirror.net/wp-content/uploads/2020/12/chewy-icon-1200x1200.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>chewyMaps</title>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase.js"></script>
+
+    <script>
+        // Initialize Firebase
+        firebase.initializeApp({
+            apiKey: "AIzaSyBEKiFtWfB9ma_hPEKZ-1AAp5tRNfD7HWI",
+            authDomain: "chewymaps.firebaseapp.com",
+            projectId: "chewymaps",
+            storageBucket: "chewymaps.appspot.com",
+            messagingSenderId: "277191014551",
+            appId: "1:277191014551:web:4b331f004725957ddcd1d2",
+            measurementId: "G-760FMXQDZ8"
+        });
+
+        firebase.analytics();
+        let db = firebase.firestore();
+
+        var data = [];
+
+        async function getAllPoints() {
+            await db
+                .collection("locations")
+                .get()
+                .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        data.push(doc.data());
+                    });
+                });
+        }
+    </script>
+
+    <!-- ------------Header Starts here------------ -->
+    <nav aria-label="Header Navigation" class="header-wrapper">
+        <div class="main-header">
+            <!-- TODO: Use Chewy Header to keep the same style throught the webpage -->
+            <header class="header-container">
+                <div class="header-nav">
+                    <ul class="header-nav-list">
+                        <li>
+                            <h1 class="logo-header">
+                                <a aria-hidden="false" href="https://www.chewy.com" aria-label="Chewy Homepage"
+                                    class="header-logo">
+                                    <img class="logo-icon"
+                                        src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fchewy-logo-white.png?v=1610121972558"
+                                        lt="Chewy Homepage" />
+                                </a>
+                            </h1>
+                        </li>
+                        <li>
+                            <form action="#" class="search">
+                                <input type="text" placeholder=" Find the best for your pet..." name="search" />
+                                <button type="submit" aria-label="Submit" name="nav-submit-button"
+                                    class="search-submit">
+                                    <span role="icon-large">
+                                        <span role="presentation" class="icon-image">
+                                            <i class="fa fa-search fa-2x search-icon" aria-hidden="true "></i>
+                                        </span>
+                                    </span>
+                                </button>
+                            </form>
+                        </li>
+                        <li style="border-right:1px solid;">
+                            <span class="items">
+                                <a href="https://www.chewy.com/app/content/contact">
+                                    24/7 Help
+                                    <i class="fa fa-chevron-down" style="color:#f8d81c" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <li style="border-right:1px solid;">
+                            <span class="items">
+                                <a href="https://www.chewy.com/app/account">
+                                    your account
+                                    <i class="fa fa-chevron-down" style="color:#f8d81c" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="items">
+                                <a href="https://www.chewy.com/app/cart">
+                                    <i class="fa fa-shopping-cart fa-lg"></i>
+                                    your cart
+                                    <i class="fa fa-chevron-down" style="color:#f8d81c" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="header-middle-row">
+                    <ul class="header-middle">
+                        <li>
+                            <span class="shop-pet">
+                                <a href="#">
+                                    shop by pet
+                                    <i class="fa fa-chevron-down" style="color:#f8d81c" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="shop-brand">
+                                <a href="https://www.chewy.com/app/catalog/brands">shop by brand</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="pharmacy">
+                                <a href="https://www.chewy.com/b/pharmacy-2515">
+                                    pharmacy
+                                    <i class="fa fa-chevron-down" style="color:#f8d81c" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="deals">
+                                <a href="https://www.chewy.com/deals/todays-deals-2723">today's deals</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="giftcards">
+                                <a href="https://www.chewy.com/dp/226304">giftcards</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chewymaps">
+                                <a href="#">chewyMaps</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="free-shipping">
+                                <a href="#">FREE 1-3 DAY SHIPPING OVER $49!</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </nav>
+
+    <!-- ------------banner logo image------------ -->
+    <div class="banner">
+        <img
+            src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fchewymaps-banner1.jpg?v=1610231945382" />
+    </div>
+
+    <!-- ------------location drop downs------------ -->
+    <div id="location">
+        <div class="city">
+            - New York -
+        </div>
+        <p id="current"></p>
+        <div class="dropdown">
+            Borough
+            <select class="dropdown-content" onchange="filterBorough(this.value);">
+                <option id="A" value="All">All</option>
+                <option id="Q" value="Queens">Queens</option>
+                <option id="BR" value="Brooklyn">Brookyln</option>
+                <option id="BX" value="Bronx">Bronx</option>
+                <option id="M" value="Manhattan">Manhattan</option>
+                <option id="SI" value="Staten Island">Staten Island</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            Category
+            <select class="dropdown-content" onchange="filterMarkers(this.value);">
+                <option value="All">All</option>
+                <option value="Park">Park</option>
+                <option value="Groomer">Groomer</option>
+                <option value="Veterinary">Veterinary</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Animal Shelter">Animal Shelter</option>
+                <option value="Day Care Center">Day Care Center</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Map Display Starts here: -->
+    <div id="map">
+        <title id="mapDisplayed">ChewyMap</title>
+        <script>
+            var marker;
+            var markerList = [];
+            // Initialize and add the map
+            async function initMap() {
+                // Force data to be filled
+                const MBDR = { lat: 40.5778771, lng: -73.9416595 };
+                const fillData = await getAllPoints();
+
+                //40.578333430822155, -73.94159512742087
+
+                // The map, centered at New York
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: 40.7128, lng: -74.006 },
+                    zoom: 10.2
+                });
+
+                for (let i = 0; i < data.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: { lat: data[i].Lat, lng: data[i].Lon },
+                        map: map,
+                        category: data[i].Category,
+                        title: data[i].Name,
+                        borough: data[i].Borough,
+                        lat: data[i].Lat,
+                        lon: data[i].Lon
+                    });
+                    // fill array for filter function
+                    markerList.push(marker);
+
+                    marker.addListener("click", function () {
+                        map.panTo(this.getPosition());
+                        map.setZoom(16);
+                    });
+                }
+
+                const contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h1 id="firstHeading" class="firstHeading">Manhattan Beach Dog Run</h1>' +
+                    '<div id="bodyContent">' +
+                    "<p><b>Manhattan Beach Dog Run</b>, Dog runs are re-open. Please continue to wear a face covering and maintain at least six " +
+                    "feet of social distance from other households. Our off-leash rules still apply, but please " +
+                    "note that the Center for Disease Control recommends that all dog owners keep their dogs " +
+                    "on a leash and maintain at least six feet of distance from other people and animals." +
+                    "Enjoy the outdoors with your dog in New York City parks! Remember to be safe, obey the rules, and respect the park and others. " +
+                    '<p> Share your thoughts on this Chewy Aprroved location and see what other Chewy members have to say: <a href="https://www.google.com/search?q=manhattan+beach+dog+run&oq=manhattan&aqs=chrome.1.69i57j69i59j46i433j46i199i291i433j46j0i433j46i433j46i199i291.4589j1j15&sourceid=chrome&ie=UTF-8#lrd=0x89c245b4922e4ebb:0x1500aedfe481a185,1,,,">' +
+                    "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+                    "</div>" +
+                    "</div>";
+
+                const infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                const hardMarker = new google.maps.Marker({
+                    position: MBDR,
+                    map,
+                    title: "Manhattan Beach Dog Run"
+                });
+
+                markerList.push(hardMarker);
+
+                hardMarker.addListener("click", () => {
+                    infowindow.open(map, hardMarker);
+                    map.setCenter(this.getPosition());
+                    map.setZoom(16);
+
+                });
+                // 40.57796042038261, -73.94164467136252
+            }
+
+            filterBorough = function (borough) {
+                for (i = 0; i < markerList.length; i++) {
+                    marker = markerList[i];
+                    // If is same borough or borough not picked
+                    if (
+                        marker.borough == borough ||
+                        borough.length === 0 ||
+                        borough == "All"
+                    ) {
+                        marker.setVisible(true);
+                    }
+                    // Categories don't match
+                    else {
+                        marker.setVisible(false);
+                    }
+                }
+                // Zoom to borough selected
+                if (borough == "Queens") {
+                    map.panTo({ lat: 40.7282, lng: -73.7949 });
+                    map.setZoom(12);
+                } else if (borough == "Manhattan") {
+                    map.panTo({ lat: 40.6782, lng: -73.9442 });
+                    map.setZoom(12);
+                } else if (borough == "Bronx") {
+                    map.panTo({ lat: 40.8448, lng: -73.8648 });
+                    map.setZoom(12);
+                } else if (borough == "Brooklyn") {
+                    map.panTo({ lat: 40.6782, lng: -73.9442 });
+                    map.setZoom(12);
+                } else if (borough == "Staten Island") {
+                    map.panTo({ lat: 40.5795, lng: -74.1502 });
+                    map.setZoom(12);
+                } else {
+                    map.panTo({ lat: 40.7128, lng: -74.006 });
+                    map.setZoom(16);
+                }
+            };
+
+            filterMarkers = function (category) {
+                for (i = 0; i < markerList.length; i++) {
+                    marker = markerList[i];
+                    // If is same category or category not picked
+                    if (
+                        marker.category == category ||
+                        category.length === 0 ||
+                        category == "All"
+                    ) {
+                        marker.setVisible(true);
+                    }
+                    // Categories don't match
+                    else {
+                        marker.setVisible(false);
+                    }
+                }
+            };
+        </script>
+
+        <!-- Google Maps API Key-->
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEKiFtWfB9ma_hPEKZ-1AAp5tRNfD7HWI&callback=initMap"
+            async defer></script>
+    </div>
+
+    <!-- Footer Starts here: -->
+    <footer id="footer" class="footer-container">
+        <div class="top-footer">
+            <ul>
+                <li>
+                    <span class="24-available">
+                        <a href="#">Our experts are available 24/7:</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="hover-top-ft">
+                        <span class="telephone">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:1-800-672-4399">1-800-672-4399</a>
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    <span class="hover-top-ft">
+                        <span class="chat-now">
+                            <i class="fa fa-comments"></i>
+                            <a
+                                href="https://chewy.custhelp.com/app/chat/chat_launch/request_source/8/chat_data/cV9pZD02MCZyZWZlcnJlclVybD1odHRwcyUzQSUyRiUyRnd3dy5jaGV3eS5jb20lMkZkZWFscyUyRnRvZGF5cy1kZWFscy0yNzIzJnN0YXRlPTMx">chat
+                                now</a>
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    <span class="hover-top-ft">
+                        <span class="message-us">
+                            <i class="fa fa-envelope"></i>
+                            <a
+                                href="https://service.chewy.com/messageus?_ga=2.37349161.844063414.1610049405-1926107824.1610049405">message
+                                us</a>
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    <span class="back-to-top">
+                        <a href="#" data-link-action="top" data-link-label="back-to-top"
+                            lass="sfw-mobile-footer-top js-tracked-footer-link">back to top
+                        </a>
+                        <i class="fa fa-chevron-up" style="color:#f8d81c"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="middle-footer">
+            <ul>
+                <li class="line-hover">
+                    <a href="https://www.chewy.com/app/content/about-us">About</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://investor.chewy.com/overview/default.aspx">Investor Relations</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://www.chewy.com/app/content/affiliate">Affiliates</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://www.chewy.com/jobs">Jobs</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://www.chewy.com/app/content/faq">FAQs</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://be.chewy.com/">Blog</a>
+                </li>
+                <li class="line-hover">
+                    <a href="https://www.chewy.com/gift-guide">Gift Guide</a>
+                </li>
+                <li class="line-hover">
+                    <span class="donate-link">
+                        <a href="https://www.chewy.com/g/animal-shelters-and-rescues">Donate to a Rescue</a>
+                    </span>
+                </li>
+
+                <li class="media-links">
+                    <span class="facebook">
+                        <a href="https://www.facebook.com/Chewy/"><i class="fa fa-facebook"></i></a>
+                    </span>
+                </li>
+                <li class="media-links">
+                    <span class="youtube">
+                        <a href="https://www.youtube.com/channel/UCpWl2nwLDQQI4TTa1kJgxrg"><i
+                                class="fa fa-youtube "></i></a>
+                    </span>
+                </li>
+                <li class="media-links">
+                    <span class="instagram">
+                        <a href="https://www.instagram.com/chewy/">
+                            <i class="fa fa-instagram"></i></a>
+                    </span>
+                </li>
+                <li class="media-links">
+                    <span class="twitter">
+                        <a href="https://twitter.com/chewy"><i class="fa fa-twitter"></i></a>
+                    </span>
+                </li>
+                <li class="review">
+                    <span class="google-review">
+                        <a
+                            href="https://www.google.com/shopping/ratings/account/metrics?q=chewy.com&c=US&v=15&hl=en_US"><img
+                                src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fgoogle-review.PNG?1610227584877" /></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="third-row">
+            <ul>
+                <li>
+                    <span class="app-links">
+                        <a href="https://apps.apple.com/us/app/chewy-where-pet-lovers-shop/id1149449468"><img
+                                src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fapple-store-badge.jpg?1610227572208" /></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="app-links">
+                        <span class="google-app-link">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.chewy.android&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img
+                                    src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fthumbnails%2Fgoogle_play_web_generic.png?1610227595995" /></a>
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    <div class="vl"></div>
+                </li>
+                <li>
+                    <span class="app-links">
+                        <a href="https://www.safe.pharmacy/buying-safely/"><img
+                                src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Fthumbnails%2Fpharmacy.jpg?1610228442911" /></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="app-links">
+                        <span class="pharm">
+                            <a
+                                href="https://www.legitscript.com/websites/?lookup_type=website_search&website=chewy.com&product"><img
+                                    src="https://cdn.glitch.com/0ac71ce6-395a-4113-9ac5-114563910ba7%2Flegitscript.png?1610228448490" /></a>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <hr class="solid" />
+
+        <div class="bottom-ftr">
+            <ul>
+                <li>
+                    <span>
+                        Copyright © 2021 Chewy, Inc.
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="https://www.chewy.com/app/content/terms">Terms of Use</a>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="https://www.chewy.com/app/content/privacy">Privacy Policy</a>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="https://www.chewy.com/app/content/privacy#cms-privacy__cookies">Interest-Based Ads</a>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="https://www.chewy.com/app/content/accessibility-information">Accessibility</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

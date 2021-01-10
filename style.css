@@ -1,0 +1,477 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: roboto, arial, sans-serif;
+  margin: 0em;
+}
+
+/* Header */
+.header-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-header {
+  position: relative;
+  z-index: 3999;
+  background-color: #128ced;
+  color: #fff;
+  overflow: hidden;
+}
+
+.header-container {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 75rem;
+  max-width: 138rem;
+  padding-bottom: 15px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-top-row {
+  position: relative;
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.header-top-row ul {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.header-nav ul li {
+  display: inline-block;
+  justify-content: space-between;
+  padding: 15px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-nav ul li a {
+  font-family: roboto, sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 450;
+}
+
+.header-nav ul li .items a {
+  padding: 10px;
+}
+
+.header-nav ul li .items a:hover {
+  cursor: pointer;
+  background: #0c74bc;
+}
+
+.header-nav-list {
+  margin: 0;
+  padding: 0;
+}
+
+.search-submit {
+  background-color: transparent;
+  border: 0;
+  color: #0e70be;
+  position: relative;
+  right: 60px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.search input[type="text"] {
+  font-family: roboto, sans-serif;
+  font-size: 100%;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+.header-logo {
+  display: inline-block;
+  padding: 0;
+}
+
+.logo-icon {
+  display: block;
+  width: 9.4rem;
+  height: 2.8rem;
+}
+
+.header-middle-row ul {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.header-middle-row ul li {
+  display: inline;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-middle-row ul li a {
+  font-family: roboto, sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 450;
+  padding: 5px;
+}
+
+.header-middle-row ul li .shop-pet a {
+  font-family: roboto, sans-serif;
+  font-size: 150%;
+}
+
+.header-middle-row ul li .free-shipping a {
+  font-family: roboto, sans-serif;
+  color: #f8d81c;
+}
+
+.header-middle-row ul li:hover {
+  cursor: pointer;
+  background: #0c74bc;
+}
+
+/* banner */
+.banner img {
+  position: relative;
+  width: 100%;
+}
+
+.banner {
+  background: #FFFFFF;
+}
+
+/* location dropdowns*/
+.city {
+  font-family: roboto, sans-serif;
+  font-weight: bold;
+  font-size: 300%;
+  color: #128ced;
+}
+
+#location {
+  margin-top: 0;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 25px;
+  align-items: center;
+  text-align: center;
+}
+
+.dropdown {
+  display: inline-block;
+  padding-bottom: 10px;
+  font-family:roboto, sans-serif;
+  font-weight: 500;
+  color: #128ced;
+  font-size: 150%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.dropdown-content {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+/* The Map */
+#map {
+  width: 100%;
+  height: 450px;
+  position: fixed;
+}
+
+/* The footer */
+.footer-container {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.top-footer {
+  background: #128ced;
+  height: 3rem;
+  position: relative;
+  padding: 1.5rem;
+  margin-bottom: 0rem;
+}
+.top-footer ul {
+  white-space: nowrap;
+  align-items: center;
+  text-align: center;
+}
+
+.top-footer ul li {
+  display: inline;
+  margin-top: 1rem;
+  justify-content: space-between;
+  padding: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.top-footer ul li span i {
+  color: #FFFFFF;
+}
+
+.top-footer ul li span a {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 115%;
+  letter-spacing: -0.015rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.hover-top-ft {
+  transition: 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5em;
+  margin: 0;
+}
+
+.hover-top-ft:hover {
+  cursor: pointer;
+  background: #0c74bc;
+}
+
+.back-to-top {
+  background: #0c74bc;
+  border-radius: 0.5em;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.back-to-top a:hover {
+  cursor: pointer;
+  color: #f8d81c;
+}
+
+.back-to-top i {
+  color: #f8d81c;
+}
+.middle-footer {
+  background: #f3f3f3;
+  position: relative;
+  padding: 0.2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.middle-footer ul {
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.middle-footer ul li {
+  display: inline;
+  margin-top: 1em;
+  justify-content: space-between;
+  padding-left: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.middle-footer ul li a {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 0em;
+  letter-spacing: -0.0015em;
+  text-decoration: none;
+  color: #0c74bc;
+}
+
+.line-hover {
+  margin-left: -1rem;
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.line-hover :hover {
+  text-decoration: underline;
+  text-decoration-color: #0c74bc;
+  text-decoration-thickness: 3px;
+}
+
+.line-hover a {
+  padding: 0.25rem;
+}
+
+.donate-link {
+  margin-right: 5rem;
+}
+.media-links {
+  margin: 0;
+  display: inline-block;
+  padding: 0.1rem;
+  transition: 0.3s ease;
+  justify-content: space-between;
+}
+
+.media-links span {
+  padding: 0.001rem;
+}
+
+.media-links span a {
+  padding: 1rem;
+  border: 1px solid #0c74bc;
+  border-radius: 100%;
+  margin: 0 0px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.instagram a:hover {
+  cursor: pointer;
+  color: #fff;
+  background: #0c74bc;
+}
+.facebook a:hover {
+  cursor: pointer;
+  color: #fff;
+  background: #0c74bc;
+}
+.youtube a:hover {
+  cursor: pointer;
+  color: #fff;
+  background: #FF0000;
+  border: 1px solid #ff0000;
+}
+.twitter a:hover {
+  cursor: pointer;
+  color: #fff;
+  background: #1DA1F2;
+  border: 1px solid #1DA1F2;
+}
+
+.google-review img {
+  padding: 0.55rem;
+  border: 1px solid #bbb;
+  margin: 0;
+  background: #f3f3f3;
+  border-radius: 0.5rem;
+  width: 7%;
+  height: 5%;
+}
+.third-row {
+  background: #ffffff;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  position: relative;
+}
+.third-row ul {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+.third-row ul li {
+  display: inline-block;
+  margin-top: 1em;
+  justify-content: space-between;
+  padding-left: 1rem;
+  align-items: center;
+  text-align: center;
+  line-height: -30rem;
+}
+
+.third-row ul li span a {
+  justify-content: space-between;
+}
+.app-links img {
+  justify-content: space-between;
+  padding: 0.6rem;
+  width: 100px;
+  height: 30px;
+}
+
+.google-app-link {
+  margin-right: 2rem;
+}
+.pharm img {
+  width: 50px;
+  height: 40px;
+}
+
+hr.solid {
+  border-top: 1px solid #bbb;
+}
+
+.vl {
+  border-left: 1px solid #bbb;
+  height: 60px;
+  position: relative;
+  left: 50%;
+  margin-left: -1rem;
+  top: 0;
+}
+
+.bottom-ftr {
+  padding-bottom: 2rem;
+  margin-top: 0rem;
+}
+
+.bottom-ftr ul {
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  margin-left: 15px;
+  white-space: nowrap;
+}
+.bottom-ftr ul li {
+  display: inline-block;
+  margin-top: 1em;
+  justify-content: space-between;
+  padding-left: 1rem;
+  align-items: center;
+  text-align: center;
+  line-height: -30rem;
+}
+
+.bottom-ftr ul li span {
+  color: #3d3c3b;
+  font-size: 1em;
+}
+.bottom-ftr ul li a {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: 10em;
+  font-size: 1em;
+  line-height: 0em;
+  justify-content: space-between;
+  letter-spacing: -0.0015em;
+  text-decoration: none;
+  color: #3d3c3b;
+}
+.bottom-ftr ul li a:hover {
+  cursor: pointer;
+  color: #0c74bc;
+}
