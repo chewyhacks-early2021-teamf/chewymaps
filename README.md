@@ -3,7 +3,7 @@
 ## How to use this code:  
 1. Download the files onto your local machine or clone the repository
 2. Unzip the files and go into the new folder 
-3. Open the html file using your browser (Chrome Reccomended)
+3. Open the html file using your browser (Chrome Recommended)
 4. Enjoy our map!
 
 ## What is going on?
